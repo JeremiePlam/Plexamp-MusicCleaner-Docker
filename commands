@@ -1,5 +1,5 @@
 docker build -t myimage .
-docker run -t -d -p 80:80 --name mycontainer myimage
+docker run -t -d -p 6942:80 --name mycontainer myimage
 
 docker exec -it mycontainer sh
 
