@@ -11,5 +11,5 @@ jobs:
     - name: Build and push the Docker image
       run:
         docker login --username JeremiePlam --password ${{ secrets.GH_PAT }} ghcr.io
-        docker build . --file Dockerfile --tag ghcr.io/JeremiePlam/plexamp-musiccleaner:$(date +%s)
+        docker build . --tag ghcr.io/JeremiePlam/plexamp-musiccleaner:$(date +%s)
         docker push ghcr.io/JeremiePlam/plexamp-musiccleaner:$(date +%s)
