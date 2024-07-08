@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build and push the Docker image
-      run:
+      run: |
         docker login --username JeremiePlam --password ${{ secrets.GH_PAT }} ghcr.io
-        docker build . --tag ghcr.io/JeremiePlam/plexamp-musiccleaner:$(date +%s)
+        docker build . --file Dockerfile --tag ghcr.io/JeremiePlam/plexamp-musiccleaner:$(date +%s)
         docker push ghcr.io/JeremiePlam/plexamp-musiccleaner:$(date +%s)
